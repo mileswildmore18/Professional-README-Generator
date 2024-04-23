@@ -2,9 +2,9 @@
 // If there is no license, return an empty string
 function renderLicenseBadge(license) {
   if (license !== 'None') {
-    return `[license title](license url)`
-  }
-  return '';
+    return `[Github License](license url)`
+  } else {
+  return '';}
 }
 
 // Creates a function that returns the license link
@@ -28,18 +28,24 @@ function generateMarkdown(data) {
   ## Description
 
   ${data.description}
-
-  ## Table of Contents
+${renderLicenseLink(data.license)}
+  ### Table of Contents
 
   [Installation(#installation)]
-  
+
+  [Questions(#questions)]
+
   [Usage(#usage)]
-  ${renderLicenseLink(data.license)}
+  
+  [License(#license)]
+   Table of Contents
 
   [Tests(#tests)]
   
-  [Questions(#questions)]
-    
+  [Contributing(#contributing)]
+  
+  
+  
   `;
 }
 
