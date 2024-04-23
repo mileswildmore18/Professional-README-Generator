@@ -4,28 +4,30 @@ function renderLicenseBadge(license) {
   if (license !== 'None') {
     return `[Github License](license url)`
   } else {
-  return '';}
+    return '';
+  }
 }
 
 // Creates a function that returns the license link
 // If there is no license, return an empty string
 function renderLicenseLink(license) {
 
-  return license `[license](https://github.com/mileswildmore18/Professional-README-Generator)`
+  return license`[license](https://github.com/mileswildmore18/Professional-README-Generator)`
 }
 
 // Creates a function that returns the license section of README
 // If there is no license, return an empty string
-function renderLicenseSection(license) {license}
+function renderLicenseSection(license) { license }
 return `
 ## License
-This project is license with ${license }`
+This project is license with ${license}`
 
 
 // Creates a function to generate markdown for README
 function generateMarkdown(data) {
   return `# ${data.description}
   ## Description
+  
 
   ${data.description}
 ${renderLicenseLink(data.license)}
@@ -38,11 +40,12 @@ ${renderLicenseLink(data.license)}
   [Usage(#usage)]
   
   [License(#license)]
-   Table of Contents
+
+  [Contributing(#contributing)]
 
   [Tests(#tests)]
-  
-  [Contributing(#contributing)]
+
+  [Questions(#questions)]
   
   
   

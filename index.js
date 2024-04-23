@@ -1,4 +1,3 @@
-// TODO: Include packages needed for this application
 //Packages required for this application
 const inquirer = require('inquirer');
 
@@ -20,7 +19,7 @@ const questions = [
     },
     {
         type: 'input',
-        name: 'Project',
+        name: 'title',
         message: `What is your project's title?`,
     },
     {
@@ -30,41 +29,41 @@ const questions = [
     },
     {
         type: 'list',
-        name: 'License',
+        name: 'license',
         message: 'What kind of license should your project have?',
         choices: ['MIT', 'APACHE 2.0', 'GPL 3.0', 'BSD 3', 'None'],
     },
     {
         type: 'input',
-        name: 'Dependencies',
-        message: 'What command should be run to install dependencies?'
+        name: 'installation',
+        message: 'What installations did you use for your project?'
 
     },
     {
         type: 'input',
-        name: 'Tests',
+        name: 'tests',
         message: 'What command should be run to run tests?'
     },
     {
         type: 'input',
         name: 'usage',
-        message: 'What does the user need to know about using the repo?'
+        message: 'What items did you use to create your repo?'
     },
     {
         type: 'input',
         name: 'contributing',
-        message: 'What does the user need to know about contributing to the repo?'
+        message: 'Who helped contribute to your repo?'
     }
 ]
 
 
-// TODO: Create a function to write README file
+//Creates a function to write README file
 function writeToFile(fileName, data) { }
 fs.writeFile('readme.md', string, (error) => {
     if (error) throw error;
 })
 
-// TODO: Create a function to initialize app
+//Creates a function to initialize app
 function init() { }
 //ask the questions
 inquirer.prompt(questions).then((answers) => {
