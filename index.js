@@ -7,49 +7,49 @@ const fs = require('fs')
 // Creates an array of questions for user input
 const questions = [
 
-    {
+    {   //Asks the user for the Github name
         type: 'input',
         name: 'GitHub',
         message: 'What is your GitHub username?',
     },
-    {
+    {   //Asks the user for their e-mail address
         type: 'input',
-        name: 'email address',
+        name: 'email',
         message: 'What is your email address?',
     },
-    {
+    {   //Asks the user for their project title
         type: 'input',
         name: 'title',
         message: `What is your project's title?`,
     },
-    {
+    {   //Asks the user for a description of what their project is about
         type: 'input',
         name: 'description',
         message: 'Please write a short description of your project'
     },
-    {
+    {   //Asks the user for what kind of license they want on their project
         type: 'list',
         name: 'license',
         message: 'What kind of license should your project have?',
         choices: ['MIT', 'APACHE 2.0', 'GPL 3.0', 'BSD 3', 'None'],
     },
-    {
+    {   //Asks the user what installations they used for the project
         type: 'input',
         name: 'installation',
         message: 'What installations did you use for your project?'
 
     },
-    {
+    {   //Asks the user what commands should be used to run tests
         type: 'input',
         name: 'tests',
-        message: 'What command should be run to run tests?'
+        message: 'What command should be used to run tests?'
     },
-    {
+    {   //Asks the user what items were used to create the repo
         type: 'input',
         name: 'usage',
         message: 'What items did you use to create your repo?'
     },
-    {
+    { //Asks the user who contributed to the repo
         type: 'input',
         name: 'contributing',
         message: 'Who helped contribute to your repo?'

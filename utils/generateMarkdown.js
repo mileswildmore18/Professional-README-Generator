@@ -2,7 +2,7 @@
 // If there is no license, return an empty string
 function renderLicenseBadge(license) {
   if (license !== 'None') {
-    return `[Github License](license url)`
+    return `[Github License](https://img.shields.io/badge/License-MIT-green)`
   } else {
     return '';
   }
@@ -47,8 +47,8 @@ ${renderLicenseLink(data.license)}
 
   [Questions(#questions)]
   
-  
-  
+  ${GitHub}
+  ${email}
   `;
 }
 
