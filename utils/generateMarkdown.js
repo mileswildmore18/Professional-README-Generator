@@ -1,8 +1,14 @@
 // Creates a function that returns a license badge based on which license is passed in
 // If there is no license, return an empty string
 function renderLicenseBadge(license) {
-  if (license !== 'None') {
-    return `[Github License](https://img.shields.io/badge/License-${license}-green)`
+  if (license === 'MIT') {
+    return `[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)]`
+  } else if (license === 'APACHE 2.0') {
+    return `[![License: APACHE 2.0](https://img.shields.io/badge/License-APACHE_2.0-blue.svg)]`
+  } else if (license === 'GPLv3.0') {
+    return `[![License: GPLv3.0](https://img.shields.io/badge/License-GPLv3.0-blue.svg)]`
+  } else if (license === 'BSD_3') {
+    return `[![License: BSD_3](https://img.shields.io/badge/License-BSD_3-blue.svg)]`
   } else {
     return '';
   }
@@ -11,8 +17,12 @@ function renderLicenseBadge(license) {
 // Creates a function that returns the license link
 // If there is no license, return an empty string
 function renderLicenseLink(license) {
+  if (license !== 'None') {
+    return `*[License](#license)`;
+  } else {
+    return '';
+  };
 
-  return license ? `*[License](#license)` : ``;
 }
 
 // Creates a function that returns the license section of README
@@ -40,7 +50,7 @@ ${data.description}
   * [Usage](#usage)
   ${renderLicenseLink(data.license)}
   * [Contributing](#contributing)
-  * [Test](#tests)
+  * [Tests](#tests)
   * [Questions](#questions)
 
   
