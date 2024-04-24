@@ -1,4 +1,4 @@
-// TODO: Create a function that returns a license badge based on which license is passed in
+// Creates a function that returns a license badge based on which license is passed in
 // If there is no license, return an empty string
 function renderLicenseBadge(license) {
   if (license !== 'None') {
@@ -21,7 +21,6 @@ function renderLicenseSection(license) {
   if (license !== 'None') {
     return `
 
-## License
 This project is licensed with ${license}`
   }
   return ``;
@@ -39,7 +38,7 @@ ${data.description}
   * [Description](#description)
   * [Installation](#installation)
   * [Usage](#usage)
-     ${renderLicenseLink(data.license)}
+  ${renderLicenseLink(data.license)}
   * [Contributing](#contributing)
   * [Test](#tests)
   * [Questions](#questions)
@@ -55,11 +54,9 @@ ${data.description}
 
   ## Usage
   ${data.usage}
-
-  ${renderLicenseSection(data.license)}
-  ## License
   
-  ${data.license}
+  ## License
+  ${renderLicenseSection(data.license)}
 
   ## Contribution
   
@@ -70,9 +67,9 @@ ${data.description}
 
   ## Questions
 
-  If you would like to contact me for further information, be sure to reach out to me at ${email}
+  If you would like to contact me for further information, be sure to reach out to me at ${data.email}
   
-  If you would like to know how to setup dependencies, check out my repo at ${GitHub}
+  If you would like to know how to setup dependencies, check out my repo at ${data.GitHub}
   
   `;
 }

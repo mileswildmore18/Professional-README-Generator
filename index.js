@@ -25,7 +25,7 @@ const questions = [
     {   //Asks the user for a description of what their project is about
         type: 'input',
         name: 'description',
-        message: 'Please write a short description of your project'
+        message: 'Please write a short description of your project:'
     },
     {   //Asks the user for what kind of license they want on their project
         type: 'list',
@@ -58,11 +58,11 @@ const questions = [
 
 
 //Creates a function to write README file
-function writeToFile(fileName, data) { }
-fs.writeFile('readme.md', string, (error) => {
+function writeToFile(fileName, data) { 
+fs.writeFile('readme.md', data, (error) => {
     if (error) throw error;
 })
-
+}
 //Creates a function to initialize app
 function init() { }
 //ask the questions
@@ -76,5 +76,4 @@ inquirer.prompt(questions).then((answers) => {
 // Function call to initialize app
 init();
 
-const inquirer = require('inquirer');
 const generateMarkdown = require('./utils/generateMarkdown');
