@@ -2,7 +2,7 @@
 // If there is no license, return an empty string
 function renderLicenseBadge(license) {
   if (license !== 'None') {
-    return `[Github License](https://img.shields.io/badge/License-MIT-green)`
+    return `[Github License](https://img.shields.io/badge/License-${license}-green)`
   } else {
     return '';
   }
@@ -12,7 +12,7 @@ function renderLicenseBadge(license) {
 // If there is no license, return an empty string
 function renderLicenseLink(license) {
 
-  return license`[license](https://github.com/mileswildmore18/Professional-README-Generator)`
+  return license ?`*[License](#license)` : ``;
 }
 
 // Creates a function that returns the license section of README
@@ -28,33 +28,55 @@ return ``;
 } 
 // Creates a function that generates markdown for README
 function generateMarkdown(data) {
-  return `# ${data.title}
-  ${renderLicenseSection(data.license)}
-  
+  return `
+  # ${data.title}
+  ${renderLicenseBadge(data.license)}
   ## Description
   
 ${data.description}
 
-  ### Table of Contents
+ ## Table of Contents
+  * [Description](#description)
 
-  [Installation(#installation)]
+  * [Installation](#installation)
+
+  * [Usage](#usage)
+     ${renderLicenseLink(data.license)}
+  * [Contributing](#contributing)
+
+  * [Test](#tests)
+
+  
+
+  [Installation]
+  
+  To install the necessary dependencies, run the following command:
+  \`\`\`
+  ${data.installation}
+  \`\`\`
+
+  [Usage]
+  
+  ${data.usage}
+  ${renderLicenseSection(data.license)}
+  [License]
+  
+  ${data.license}
+
+  [Contribution]
+  
+  ${data.contributing}
+
+  [Tests]
+  ${data.tests}
 
   [Questions(#questions)]
 
-  [Usage(#usage)]
+  If you would like to contact me for further information, be sure to reach out to me at ${email}
   
-  [License(#license)]
-
-  [Contributing(#contributing)]
-
-  [Tests(#tests)]
-
-  [Questions(#questions)]
+  If you would like to know how to setup dependencies, check out my reop at ${GitHub}
   
-  ${GitHub}
-  ${email}
-  ${renderLicenseLink(data.license)}
-  ${renderLicenseBadge(data.license)}`;
+  `;
 }
 
 
