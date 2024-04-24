@@ -18,7 +18,7 @@ function renderLicenseBadge(license) {
 // If there is no license, return an empty string
 function renderLicenseLink(license) {
   if (license !== 'None') {
-    return `*[License](#license)`;
+    return `[License](#license)`;
   } else {
     return '';
   };
@@ -68,7 +68,7 @@ ${data.description}
   ## License
   ${renderLicenseSection(data.license)}
 
-  ## Contribution
+  ## Contributing
   
   ${data.contributing}
 
@@ -79,7 +79,7 @@ ${data.description}
 
   If you would like to contact me for further information, be sure to reach out to me at ${data.email}
   
-  If you would like to know how to setup dependencies, check out my repo at ${data.GitHub}
+  If you would like to know how to setup dependencies, check out my repo at https://github.com/${data.GitHub}
   
   `;
 }
