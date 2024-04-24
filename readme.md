@@ -24,6 +24,7 @@ This project will demonstrate how to create a README file from scratch with a RE
   
   To install the necessary dependencies, run the following command:
   ```
+  npm init -y
   npm i inquirer@8.2.4
   ```
 
