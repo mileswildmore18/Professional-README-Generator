@@ -69,7 +69,7 @@ function init() { }
 inquirer.prompt(questions).then((answers) => {
     //pass the answers to the big string
     const string = generateMarkdown(answers)
-    //write the fle with that string
+    //write the file with that string
     writeToFile("readme.md", string)
 })
 
